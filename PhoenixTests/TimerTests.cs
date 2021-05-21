@@ -16,7 +16,8 @@ namespace PhoenixTests {
 			executor.Execute(() => works = true, TimeSpan.FromMilliseconds(1));
 
 			Assert.IsFalse(works);
-			Assert.That(() => works, Is.True.After(10, 1));
+			System.Threading.Thread.Sleep(15);
+			Assert.IsTrue(works);
 		}
 
 		[Test()]
